@@ -1,0 +1,33 @@
+import JugadorPrincipal from "../personajes/JugadorPrincipal.js";
+
+export default class GameScene2 extends Phaser.Scene {
+    constructor() {
+        super('GameScene2');
+    }
+
+    init(data) {
+        this.playerKey = data.playerSprite || 'player';
+        this.startX = data.x || 200;
+        this.startY = data.y || 200;
+    }
+
+    create() {
+        this.fondo = this.add.tileSprite(0, 0, this.scale.width, this.scale.height, 'piso')
+            .setOrigin(0, 0);
+        
+        this.JugadorPrincipal = new JugadorPrincipal(
+            this,
+            this.startX,
+            this.startY,
+            this.playerKey
+        ).setDepth(1);
+
+        this.JugadorPrincipal.setCollideWorldBounds(true);
+        
+        this.keys = this.input.keyboard.createCursorKeys();
+    }
+
+    update() {
+       this.JugadorPrincipal.update(this.keys);
+    }
+}

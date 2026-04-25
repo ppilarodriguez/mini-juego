@@ -1,0 +1,33 @@
+export default class BootScene extends Phaser.Scene {
+
+    constructor(){
+        super('BootScene');
+    }
+
+    preload(){
+        //personajitos 
+        this.load.image('nena', './assets/personajes/nena.png');
+        this.load.image('nene', './assets/personajes/nene.png');
+
+        //sprites de los personajes
+        this.load.spritesheet('nena-arco','./assets/sprites/nena-arco.png',{frameWidth:64,frameHeight:64});
+        this.load.spritesheet('nena-hacha','./assets/sprites/nena-hacha.png',{frameWidth:64,frameHeight:64});
+        this.load.spritesheet('nene-arco','./assets/sprites/nene-arco.png',{frameWidth:64,frameHeight:64});
+        this.load.spritesheet('nene-hacha','./assets/sprites/nene-hacha.png',{frameWidth:64,frameHeight:64});
+
+        //armas
+        this.load.image('arco','./assets/armas/arco.png');
+        this.load.image('hacha','./assets/armas/hacha.png');
+
+        //objetos random que vamos a usar
+        this.load.image('casa','./assets/objetos/casa.png');
+
+        this.load.image('pasto','./assets/objetos/pasto.png');
+        this.load.image('piso','./assets/objetos/piso.png');
+        this.load.image('pasto-flores','./assets/objetos/pasto-flores.png');
+    }
+
+    create(){
+        this.scene.start('MenuScene');
+    }
+}
