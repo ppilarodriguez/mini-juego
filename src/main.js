@@ -9,11 +9,11 @@ import BaseScene from "./escenas/BaseScene.js";
 const config = {
     type: Phaser.AUTO,
     scale: {
-    mode: Phaser.Scale.FIT, // Escala para llenar la pantalla
-    autoCenter: Phaser.Scale.CENTER_BOTH, // Centra el juego
+    mode: Phaser.Scale.FIT, 
+    autoCenter: Phaser.Scale.CENTER_BOTH, 
     width: 1280,
     height: 720,
-    fullscreenTarget: 'contenedor-juego' // Opcional: si quieres expandir un div específico
+    fullscreenTarget: 'contenedor-juego'
     },
     backgroundColor: '#cef8ff',
     physics: {
