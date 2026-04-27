@@ -14,7 +14,8 @@ export default class WeaponScene extends BaseScene {
         this.botonPantallaCompleta();
 
         const titulo = this.add.text(640, 120, 'Elegí tu arma', {
-        fontSize: '22px',
+        fontFamily: '"Jersey 10"',
+        fontSize: '28px',
         fill: '#000000'
         }).setOrigin(0.5);
 

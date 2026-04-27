@@ -45,10 +45,10 @@ export default class GameScene extends BaseScene {
         this.mensajeNpc = this.add.text(
         this.npc.x,
         this.npc.y - this.npc.height / 2 - 20,
-        'Ingresa a la tienda!',
+        'INGRESÁ A LA TIENDA!',
         {
-            fontFamily: '"Tiny5"',
-            fontSize: '15px',
+            fontFamily: '"Jersey 10"',
+            fontSize: '18px',
             color: '#000',
             backgroundColor: '#fff',
             padding: { x: 10, y: 5 }

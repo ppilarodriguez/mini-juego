@@ -18,6 +18,7 @@ export default class Portal{
         this.zone.body.moves = false;
 
         this.textoE = escena.add.text(x, y - 50, 'E', {
+            fontFamily: '"Jersey 10"',
             fontSize:'20px',
             color: '#ffffff',
             fontStyle: 'bold',

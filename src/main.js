@@ -15,7 +15,7 @@ const config = {
     height: 720,
     fullscreenTarget: 'contenedor-juego'
     },
-    backgroundColor: '#cef8ff',
+    backgroundColor: '#ffffff',
     physics: {
         default: 'arcade',
         arcade: { debug: false }
