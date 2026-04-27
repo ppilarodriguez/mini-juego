@@ -1,15 +1,16 @@
-export default class MenuScene extends Phaser.Scene{
+import BaseScene from "./BaseScene.js";
+
+export default class MenuScene extends BaseScene{
     constructor(){
         super('MenuScene');
     }
 
     //creamos las opciones del menuuu (el salir no hace nada por ahora)
     create(){
-        const start = this.add.text(400, 250, 'COMENZAR', { fill: '#36ff36',fontSize: '22px', }).setInteractive();
-        const exit = this.add.text(400, 300, 'SALIR', { fill: '#f00' ,fontSize: '22px',}).setInteractive();
-
-        start.setOrigin(0.5, 0.5);
-        exit.setOrigin(0.5, 0.5);
+        this.botonPantallaCompleta();
+        
+        const start = this.add.text(640, 320, 'COMENZAR', { fill: '#36ff36',fontSize: '22px', }).setOrigin(0.5).setInteractive();
+        const exit = this.add.text(640, 380, 'SALIR', { fill: '#f00' ,fontSize: '22px',}).setOrigin(0.5).setInteractive();
 
         start.on('pointerdown',() => {
             this.scene.start('CharacterScene');

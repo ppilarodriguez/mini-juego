@@ -1,7 +1,8 @@
 import Portal from "../objetos/Portal.js";
 import JugadorPrincipal from "../personajes/JugadorPrincipal.js";
+import BaseScene from "./BaseScene.js";
 
-export default class GameScene extends Phaser.Scene {
+export default class GameScene extends BaseScene {
     constructor(){
         super('GameScene');
     }
@@ -13,6 +14,7 @@ export default class GameScene extends Phaser.Scene {
     }
 
     create(){
+        this.botonPantallaCompleta();
 
         this.fondo = this.add.tileSprite(0, 0, this.scale.width, this.scale.height, 'pasto')
             .setOrigin(0, 0);

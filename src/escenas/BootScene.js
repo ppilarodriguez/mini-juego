@@ -25,9 +25,13 @@ export default class BootScene extends Phaser.Scene {
         this.load.image('pasto','./assets/objetos/pasto.png');
         this.load.image('piso','./assets/objetos/piso.png');
         this.load.image('pasto-flores','./assets/objetos/pasto-flores.png');
+
+        //Plugin (A PROBAR) del Joystick cuando pasemos a mobile o.o
+        this.load.plugin('rexvirtualjoystickplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexvirtualjoystickplugin.min.js', true);
     }
 
     create(){
+
         this.scene.start('MenuScene');
     }
 }

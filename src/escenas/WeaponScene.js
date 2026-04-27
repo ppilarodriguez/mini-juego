@@ -1,6 +1,7 @@
+import BaseScene from "./BaseScene.js";
 import GameScene from "./GameScene.js";
 
-export default class WeaponScene extends Phaser.Scene {
+export default class WeaponScene extends BaseScene {
     constructor(){
         super('WeaponScene');
     }
@@ -10,15 +11,17 @@ export default class WeaponScene extends Phaser.Scene {
     }
 
     create(){
-        const titulo = this.add.text(400, 100, 'Elegí tu arma', {
+        this.botonPantallaCompleta();
+
+        const titulo = this.add.text(640, 120, 'Elegí tu arma', {
         fontSize: '22px',
         fill: '#000000'
-        });
+        }).setOrigin(0.5);
 
         titulo.setOrigin(0.5, 0.5);
 
-        const hacha = this.add.image(250, 300, 'hacha').setInteractive();
-        const arco = this.add.image(550, 300, 'arco').setInteractive();
+        const hacha = this.add.image(540, 300, 'hacha').setOrigin(0.5).setInteractive();
+        const arco = this.add.image(740, 300, 'arco').setOrigin(0.5).setInteractive();
 
         //aca podemos refactorizar el codigo y dejarlo mas limpio con una funcion!
         hacha.on('pointerdown', () => {
