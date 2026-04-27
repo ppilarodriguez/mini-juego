@@ -13,16 +13,16 @@ export default class WeaponScene extends BaseScene {
     create(){
         this.botonPantallaCompleta();
 
-        const titulo = this.add.text(640, 120, 'Elegí tu arma', {
+        const titulo = this.add.text(640, 210, 'ELEGÍ TU ARMA', {
         fontFamily: '"Jersey 10"',
-        fontSize: '28px',
+        fontSize: '35px',
         fill: '#000000'
         }).setOrigin(0.5);
 
         titulo.setOrigin(0.5, 0.5);
 
-        const hacha = this.add.image(540, 300, 'hacha').setOrigin(0.5).setInteractive();
-        const arco = this.add.image(740, 300, 'arco').setOrigin(0.5).setInteractive();
+        const hacha = this.add.image(540, 330, 'hacha').setOrigin(0.5).setInteractive();
+        const arco = this.add.image(740, 330, 'arco').setOrigin(0.5).setInteractive();
 
         //aca podemos refactorizar el codigo y dejarlo mas limpio con una funcion!
         hacha.on('pointerdown', () => {
