@@ -5,6 +5,7 @@ import WeaponScene from "./escenas/WeaponScene.js";
 import GameScene from "./escenas/GameScene.js";
 import GameScene2 from "./escenas/GameScene2.js";
 import BaseScene from "./escenas/BaseScene.js";
+import PartidaScene from "./escenas/PartidaScene.js";
 
 const config = {
     type: Phaser.AUTO,
@@ -27,7 +28,8 @@ const config = {
         WeaponScene,
         GameScene,
         GameScene2,
-        BaseScene
+        BaseScene,
+        PartidaScene
     ],
     parent: 'contenedor-juego',
 };

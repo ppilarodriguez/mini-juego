@@ -15,6 +15,8 @@ export default class GameScene extends BaseScene {
     }
 
     create(){
+        this.cameras.main.fadeIn(1000, 0, 0, 0);
+
         this.botonPantallaCompleta();
 
         this.fondo = this.add.tileSprite(0, 0, this.scale.width, this.scale.height, 'pasto')
