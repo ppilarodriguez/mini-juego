@@ -31,7 +31,16 @@ export default class BootScene extends Phaser.Scene {
         this.load.plugin('rexvirtualjoystickplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexvirtualjoystickplugin.min.js', true);
     }
 
-    create(){
+    
+    async create(){
+        await document.fonts.load('16px "Jersey 10"');
+        await document.fonts.load('16px "Pixelify Sans"');
+        await document.fonts.ready;
+
+        const dummy = this.add.text(0, 0, ' ', {
+            fontFamily: 'Jersey 10'
+        });
+        dummy.setVisible(false);
 
         this.scene.start('MenuScene');
     }
