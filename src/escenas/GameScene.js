@@ -28,7 +28,7 @@ export default class GameScene extends BaseScene {
         ).setDepth(1);
         this.JugadorPrincipal.setCollideWorldBounds(true);
 
-        this.npc = new Npc(this, 490, 180, 'troll').setDepth(1);
+        this.npc = new Npc(this, 490, 180, 'troll').setDepth(0);
 
         this.keys = this.input.keyboard.createCursorKeys();
         this.teclaE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
