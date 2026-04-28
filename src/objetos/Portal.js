@@ -18,6 +18,7 @@ export default class Portal{
         this.zone.body.moves = false;
 
         this.textoE = escena.add.text(x, y - 50, 'E', {
+            fontFamily: '"Jersey 10"',
             fontSize:'20px',
             color: '#ffffff',
             fontStyle: 'bold',
@@ -39,13 +40,15 @@ export default class Portal{
 
         if(enZona){
             if(Phaser.Input.Keyboard.JustDown(teclaE)){
-
-                this.sceneManager.start(this.proximaEscena, {
-                    playerSprite: jugador.texture.key,
-                    x: jugador.x,
-                    y: jugador.y
+                this.escena.cameras.main.fadeOut(1000,0,0,0,(camera, progress) => {
+                    if(progress === 1){
+                        this.sceneManager.start(this.proximaEscena, {
+                        playerSprite: jugador.texture.key,
+                        x: 360,
+                        y: 80
+                        });
+                    }
                 });
-
             }
         }else{
             if(this.cercaDelPortal){

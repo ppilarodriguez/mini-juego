@@ -55,28 +55,29 @@ export default class JugadorPrincipal extends Phaser.Physics.Arcade.Sprite {
 
         this.setVelocity(0);
 
-        if(keys.up.isDown){
+        let moverIzquierda = keys.left.isDown;
+        let moverDerecha = keys.right.isDown;
+        let moverArriba = keys.up.isDown;
+        let moverAbajo = keys.down.isDown;
 
-            this.setVelocityY(-velocidad);
-            this.anims.play(`${this.nombre}-caminando-arriba`, true);
+        if(moverIzquierda) this.setVelocityX(-velocidad);
+        if(moverDerecha) this.setVelocityX(velocidad);
+        if(moverArriba) this.setVelocityY(-velocidad);
+        if(moverAbajo) this.setVelocityY(velocidad);
 
-        } else if(keys.left.isDown){
+         if(this.body.velocity.x !== 0 || this.body.velocity.y !== 0){
+             this.body.velocity.normalize().scale(velocidad);
+         }
 
-            this.setVelocityX(-velocidad);
+        if(moverIzquierda){
             this.anims.play(`${this.nombre}-caminando-izquierda`, true);
-
-        } else if(keys.right.isDown){
-
-            this.setVelocityX(velocidad);
+        }else if(moverDerecha){
             this.anims.play(`${this.nombre}-caminando-derecha`, true);
-
-        } else if(keys.down.isDown){
-
-            this.setVelocityY(velocidad);
+        }else if(moverArriba){
+            this.anims.play(`${this.nombre}-caminando-arriba`, true);
+        }else if(moverAbajo){
             this.anims.play(`${this.nombre}-caminando-abajo`, true);
-
-        } else {
-
+        }else{
             this.anims.play(`${this.nombre}-quieto`, true);
         }
     }

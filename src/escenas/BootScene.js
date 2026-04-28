@@ -14,6 +14,7 @@ export default class BootScene extends Phaser.Scene {
         this.load.spritesheet('nena-hacha','./assets/sprites/nena-hacha.png',{frameWidth:64,frameHeight:64});
         this.load.spritesheet('nene-arco','./assets/sprites/nene-arco.png',{frameWidth:64,frameHeight:64});
         this.load.spritesheet('nene-hacha','./assets/sprites/nene-hacha.png',{frameWidth:64,frameHeight:64});
+        this.load.spritesheet('troll','./assets/sprites/troll.png',{frameWidth:64,frameHeight:64});
 
         //armas
         this.load.image('arco','./assets/armas/arco.png');
@@ -25,9 +26,22 @@ export default class BootScene extends Phaser.Scene {
         this.load.image('pasto','./assets/objetos/pasto.png');
         this.load.image('piso','./assets/objetos/piso.png');
         this.load.image('pasto-flores','./assets/objetos/pasto-flores.png');
+
+        //Plugin (A PROBAR) del Joystick cuando pasemos a mobile o.o
+        this.load.plugin('rexvirtualjoystickplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexvirtualjoystickplugin.min.js', true);
     }
 
-    create(){
+    
+    async create(){
+        await document.fonts.load('16px "Jersey 10"');
+        await document.fonts.load('16px "Pixelify Sans"');
+        await document.fonts.ready;
+
+        const dummy = this.add.text(0, 0, ' ', {
+            fontFamily: 'Jersey 10'
+        });
+        dummy.setVisible(false);
+
         this.scene.start('MenuScene');
     }
 }
